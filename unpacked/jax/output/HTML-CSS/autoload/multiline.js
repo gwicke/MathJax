@@ -253,7 +253,7 @@ MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
       else                   {shift = prev.indentshift || def.indentshift}
       if (shift === MML.INDENTSHIFT.INDENTSHIFT) {shift = prev.indentshift || def.indentshift}
       if (shift === "auto" || shift === "") {shift = (state.isTSop ? this.displayIndent : "0")}
-      return HTMLCSS.length2em(shift,0);
+      return HTMLCSS.length2em(shift,1,0);
     },
     
     /****************************************************************/
@@ -591,7 +591,7 @@ MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
       //
       if (penalty >= info.penalty) {return false}
       info.penalty = penalty; info.values = values; info.W = W; info.w = w;
-      values.lineleading = HTMLCSS.length2em(values.lineleading,state.VALUES.lineleading);
+      values.lineleading = HTMLCSS.length2em(values.lineleading,1,state.VALUES.lineleading);
       values.id = this.spanID;
       return true;
     }
