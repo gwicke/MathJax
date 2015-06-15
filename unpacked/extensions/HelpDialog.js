@@ -1,6 +1,3 @@
-/* -*- Mode: Javascript; indent-tabs-mode:nil; js-indent-level: 2 -*- */
-/* vim: set ts=2 et sw=2 tw=80: */
-
 /*************************************************************
  *
  *  MathJax/extensions/HelpDialog.js
@@ -9,7 +6,7 @@
  *
  *  ---------------------------------------------------------------------
  *  
- *  Copyright (c) 2013-2014 The MathJax Consortium
+ *  Copyright (c) 2013-2015 The MathJax Consortium
  * 
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -27,14 +24,13 @@
 (function (HUB,HTML,AJAX,OUTPUT,LOCALE) {
 
   var HELP = MathJax.Extension.Help = {
-    version: "2.4.0"
+    version: "2.5.0"
   };
 
   var STIXURL = "http://www.stixfonts.org/";
   var MENU = MathJax.Menu;
 
   var CONFIG = HUB.CombineConfig("HelpDialog",{
-    closeImg: AJAX.urlRev(OUTPUT.imageDir+"/CloseX-31.png"), // image for close "X" for mobiles
 
     styles: {
       "#MathJax_Help": {
@@ -61,6 +57,36 @@
         overflow:"auto", "text-align":"left", "font-size":"80%",
         padding:".4em .6em", border:"1px inset", margin:"1em 0px",
         "max-height":"20em", "max-width":"30em", "background-color":"#EEEEEE"
+      },
+      
+      "#MathJax_HelpClose": {
+        position:"absolute", top:".2em", right:".2em",
+        cursor:"pointer",
+        display:"inline-block",
+        border:"2px solid #AAA",
+        "border-radius":"18px",
+        "-webkit-border-radius": "18px",             // Safari and Chrome
+        "-moz-border-radius": "18px",                // Firefox
+        "-khtml-border-radius": "18px",              // Konqueror
+        "font-family":"'Courier New',Courier",
+        "font-size":"24px",
+        color:"#F0F0F0"
+      },
+      "#MathJax_HelpClose span": {
+        display:"block", "background-color":"#AAA", border:"1.5px solid",
+        "border-radius":"18px",
+        "-webkit-border-radius": "18px",             // Safari and Chrome
+        "-moz-border-radius": "18px",                // Firefox
+        "-khtml-border-radius": "18px",              // Konqueror
+        "line-height":0, 
+        padding:"8px 0 6px"     // may need to be browser-specific
+      },
+      "#MathJax_HelpClose:hover": {
+        color:"white!important",
+        border:"2px solid #CCC!important"
+      },
+      "#MathJax_HelpClose:hover span": {
+        "background-color":"#CCC!important"
       }
     }
   });
@@ -95,7 +121,7 @@
         ["div",{style:{"margin-left":"1em"}},[
           ["p",{},[["ShowMath",
             "*Show Math As* allows you to view the formula's source markup " +
-            "for copy & paste (as MathML or in its origianl format)."]]
+            "for copy & paste (as MathML or in its original format)."]]
           ],
           ["p",{},[["Settings",
             "*Settings* gives you control over features of MathJax, such as the " +
@@ -122,11 +148,9 @@
         ]
       ]],
       ["a",{href:"http://www.mathjax.org/"},["www.mathjax.org"]],
-      ["img", {
-        src: CONFIG.closeImg,
-        style: {width:"21px", height:"21px", position:"absolute", top:".2em", right:".2em"},
-        onclick: HELP.Remove
-      }]
+      ["span",{id: "MathJax_HelpClose", onclick: HELP.Remove},
+        [["span",{},["\u00D7"]]]
+      ]
     ]));
     LOCALE.setCSS(help);
     var doc = (document.documentElement||{});
