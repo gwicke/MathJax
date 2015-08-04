@@ -80,7 +80,10 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 			weierp: ["Macro", "\\wp"],
 			Z: ["Macro", "\\mathbb{Z}"],
 			Zeta: ["Macro", "\\mathrm{Z}"]
-		}
+		},
+		 mathchar0mi: {
+		 	P:            '00B6',
+		 }
 	});
 });
 
