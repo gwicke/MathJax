@@ -1,10 +1,11 @@
 MathJax.Extension["TeX/mediawiki-texvc"] = {
-	version: "2.5.0"
+	version: "2.5.1"
 };
 
 MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 	MathJax.InputJax.TeX.Definitions.Add({
 		macros: {
+			AA: ["Macro", "\u00c5"],
 			alef: ["Macro", "\\aleph"],
 			alefsym: ["Macro", "\\aleph"],
 			Alpha: ["Macro", "\\mathrm{A}"],
@@ -19,6 +20,8 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 			clubs: ["Macro", "\\clubsuit"],
 			cnums: ["Macro", "\\mathbb{C}"],
 			Complex: ["Macro", "\\mathbb{C}"],
+			coppa: ["Macro", "\u03D9"],
+			Coppa: ["Macro", "\u03D8"],
 			Dagger: ["Macro", "\\ddagger"],
 			darr: ["Macro", "\\downarrow"],
 			dArr: ["Macro", "\\Downarrow"],
@@ -38,6 +41,8 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 			Iota: ["Macro", "\\mathrm{I}"],
 			isin: ["Macro", "\\in"],
 			Kappa: ["Macro", "\\mathrm{K}"],
+			koppa: ["Macro", "\u03DF"],
+			Koppa: ["Macro", "\u03DE"],
 			lang: ["Macro", "\\langle"],
 			larr: ["Macro", "\\leftarrow"],
 			Larr: ["Macro", "\\Leftarrow"],
@@ -50,6 +55,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 			natnums: ["Macro", "\\mathbb{N}"],
 			Nu: ["Macro", "\\mathrm{N}"],
 			O: ["Macro", "\\emptyset"],
+			P: ["Macro", "\u00B6"],
 			Omicron: ["Macro", "\\mathrm{O}"],
 			or: ["Macro", "\\lor"],
 			pagecolor: ['Macro','',1],  // ignore \pagecolor{}
@@ -68,15 +74,19 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
 			sdot: ["Macro", "\\cdot"],
 			sect: ["Macro", "\\S"],
 			spades: ["Macro", "\\spadesuit"],
+			stigma: ["Macro", "\u03DB"],
+			Stigma: ["Macro", "\u03DA"],
 			sub: ["Macro", "\\subset"],
 			sube: ["Macro", "\\subseteq"],
 			supe: ["Macro", "\\supseteq"],
 			Tau: ["Macro", "\\mathrm{T}"],
+			textvisiblespace: ["Macro", "\u2423"],
 			thetasym: ["Macro", "\\vartheta"],
 			uarr: ["Macro", "\\uparrow"],
 			uArr: ["Macro", "\\Uparrow"],
 			Uarr: ["Macro", "\\Uparrow"],
 			varcoppa: ["Macro", "\\mbox{\u03D9}"],
+			vline: ['Macro','\\smash{\\large\\lvert}',0],
 			weierp: ["Macro", "\\wp"],
 			Z: ["Macro", "\\mathbb{Z}"],
 			Zeta: ["Macro", "\\mathrm{Z}"]
