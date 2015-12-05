@@ -1,5 +1,5 @@
 {
-    "name": "MathJax",
+    "name": "mathoid-mathjax",
     "version": "2.5.1-mjnode",
     "description": "Beautiful math in all browsers.",
     "keywords": ["math","svg","MathML","TeX","AsciiMath"],
